@@ -3,54 +3,82 @@ fn main() {
 
     // integer => i ve u ile başlar. i işaretli olur
     // 8, 16, 24, 32, 128 bit. En az - 2 * 7 ve 2 * 7 - 1
-    // işaretsiz olan 0 ve 2 ** 8 - 1 
+    // işaretsiz olan 0 ve 2 ** 8 - 1
     // arch -Z isize, usize
-    let i8_var = 8;
+    let mut i8_var = 8; // Değişkeni mutable yapın
 
     let u32_var = 23;
-    let u64_var:i32  = 23;
+    let u64_var = 23;
     let u_total = u32_var as u64 + u64_var as u64; // u_total'ı u64'e dönüştürün
 
     let i8_var2: u128 = 239033;
-    //i8_var = i8_var + 10;
-    //i8_var += 10; //bunu yapmak daha masraflı
-
+    i8_var += 10; // bunu yapmak daha masraflı
     println!("{}", i8_var);
 
-    let seperated_var:u32 = 123_456_789;
+    let seperated_var = 123_456_789;
     println!("{}", seperated_var);
 
     println!("{1} - {0}", i8_var, i8_var2);
 
-    let i_f_var = -12121.2;
-    println!("{}",i_f_var);
+    let i_f_var = -34354.5;
+    println!("{}", i_f_var);
 
-    //f -> f32 f64
     let mut char_var = 'a';
 
-    //octal, hexadecimal, binary literals
-    let octal_var:u16 = 0o72234;
-    let hex_var:u32 = 0xAF09;
-    let binary_var = 0b101010;
+    let mut octal_var: u16 = 0o51351;
+    let hex_var: u32 = 0xA09;
+    let binary_var: u32 = 0b10110;
 
-    //array ve tuple
-    let arr_var = [1,2,3];
-    let arr_var2 = [1;3];
-    let arr_var3: [u32; 4] = [1,3,4,6];
+    //array tuple
+    let arr_var = [1, 2, 3];
+    let arr_var2 = [1; 3];
+    let arr_var3: [u32; 4] = [1, 2, 3, 4];
 
-    let tupple_var = (2,3,7,'d');
+    let tuple_var = (2, 3.7, 'w');
 
     //string slices
-    let str_var = "ICP Hub";
+    let str_var: &str = "ISP Hub";
 
-    //string
+    //strings
     let string_var = String::new();
+    let string_var2 = String::from("Türkiye Rust Community");
 
-    //vectorler
+    println!("{}", string_var2);
+
+    //vectors
     //pointers, capacity, length
     let vec_arr = vec![1,2,3,4];
-    let vec_arr2: Vec<u32> = vec![1,2,3,4,5];
+    let vec_arr2: Vec<u32>  = vec![1,2,3,4];
 
     println!("{:?}", vec_arr);
+
+    //structs
+    #[derive(Debug)]
+    struct StructName{
+        field1: i32,
+        field2: f64
+    }
+
+    let struct_var = StructName {
+        field1: 1,
+        field2: 1.240,
+    };
+
+    println!("{:?}", struct_var);
+
+    #[derive(Debug)]
+    struct Student{
+        field1: String,
+        field2: i32,
+        field3: f64
+    }
+
+    let struct_var2 = Student {
+        field1: "Yaşar Güzel".to_string(),
+        field2: 2,
+        field3: 99.9,
+    };
+
+    println!("{:?}", struct_var2);
 
 }
