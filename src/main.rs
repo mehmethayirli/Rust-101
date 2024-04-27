@@ -45,4 +45,12 @@ fn main() {
 
     //string
     let string_var = String::new();
+
+    //vectorler
+    //pointers, capacity, length
+    let vec_arr = vec![1,2,3,4];
+    let vec_arr2: Vec<u32> = vec![1,2,3,4,5];
+
+    println!("{:?}", vec_arr);
+
 }
